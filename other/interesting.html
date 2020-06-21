@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>personnal</title>
+    <link href="css/interesting.css" rel="stylesheet" type="text/css"/>
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+</head>
+<body>
+
+
+
+    <div class="home">
+	
+	
+	
+        <div class="content">
+            <div class="stars"></div>
+            <img class="bgc" src="image/16.jpg" width="100%" alt="">
+            <h3 class="title">我是zq，一名计算机爱好者</h3>
+            <h3 class="titles">爱生活，爱旅行，爱摄影，爱技术</h3>
+            <img class="icon" src="image/2.jpg" alt="">	
+
+        </div>
+		<div id="Jnav">
+			<div class="nav">
+				<li>
+					<a href='interesting.html'><span>爱生活</span></a>
+				</li>
+				<li>
+					<a href='photowall.html'><span>作品墙</span></a>
+				</li>
+				<li>
+					<a href='music.html'><span>酷音乐吧</span></a>
+				</li>
+				<li>
+					<a href='resume.html'><span>个人简历</span></a>
+				</li>
+				<li>
+					<a href='messageboard.html'><span>联系我</span></a>
+				</li>
+				
+			</div>
+
+		</div>
+
+        <div class="icons">
+            <div class="icons_items">
+                <img class="icons_items_imgs" src="image/32.jpg" alt="">
+                <span>爱生活</span>
+            </div>
+            <div class="icons_items">
+                <img class="icons_items_imgs" src="image/35.jpg" alt="">
+                <span>爱旅行</span>
+            </div>
+            <div class="icons_items">
+                <img class="icons_items_imgs" src="image/back1.jpg" alt="">
+                <span>爱摄影</span>
+            </div>
+			  <div class="icons_items">
+                <img class="icons_items_imgs" src="image/41.jpg" alt="">
+                <span>爱技术</span>
+            </div>
+            
+        </div>
+        <div class="introduce">
+            <div class="introduce_item">
+                <img class="introduce_item_img" src="image/33.jpg" alt="">
+                <span class="introduce_item_title">我喜欢跑步爱吃蔬菜，闲暇时喜欢听音乐、打篮球，还有看球赛，我支持的球队是......中国队！</span>
+
+            </div>
+            <div class="introduce_item">
+
+                <span class="introduce_item_titles">我喜欢旅游和骑单车，希望可以骑着我的单词去周游“世界”</span>
+                <img class="introduce_item_img" src="image/38.jpg" alt="">
+            </div>
+            <div class="introduce_item">
+                <img class="introduce_item_img" src="image/34.jpg" alt="">
+                <span class="introduce_item_title">我喜欢摄影，我还有一堆朋友</span>
+            </div>
+			<div class="introduce_item">
+                <span class="introduce_item_titles">我还喜欢网页设计，现在尤其喜欢网页设计的色调调整，另外我还有一个写了三年多的CSDN博客，欢迎您来逛逛</span>
+                <img class="introduce_item_img" src="image/15.jpg" alt="">
+            </div>
+            
+        </div>
+        <audio autoplay="autoplay" id="audio" loop="loop">
+                <source src="content/songs/老街.mp3" type="audio/MP3">
+               
+        </audio>
+        <img class="music_img" src="image/13.jpg" alt="">
+    </div>
+
+</body>
+<script>
+	var $nav = $('#Jnav');
+	var navTop = $nav.offset().top;
+	/*console.log(navTop);  0*/
+	var navH = $nav.outerHeight();
+//        console.log(navH); 1270
+	var winTop_1 = 0;
+	var winWidth = $(window).width();
+//        console.log(winWidth) 1204
+	var holder = $('<div>'); //创建一个div元素
+//        console.log(holder);
+
+	$(window).on('scroll', function () {
+		var winTop_2 = $(window).scrollTop();  //获得滚动的距离
+//            console.log(winTop_2)
+		holder.css('height', navH);
+		if (winTop_2 > navTop && winWidth > 980) {
+			holder.show().insertBefore($nav);
+			$nav.addClass('fixed-nav');
+		} else {
+			holder.hide();
+			$nav.removeClass('fixed-nav');
+		}
+
+//            判断鼠标向上滚动，显示出来
+		if (winTop_2 > winTop_1 && winWidth>980) {
+			$nav.removeClass('fixed-nav-appear');
+		} else if (winTop_2 < winTop_1) {
+			$nav.addClass('fixed-nav-appear');
+		}
+		winTop_1 = $(window).scrollTop();
+	})
+</script>
+<script>
+    let mucics = document.getElementById('audio')
+    document.body.addEventListener('mousemove', function() {
+        setTimeout(() => {
+            mucics.play();
+        }, 2000);
+    }, false);
+</script>
+
+</html>

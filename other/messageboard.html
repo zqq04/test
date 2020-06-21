@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+	<meta charset="UTF-8">
+    
+	<title>有事留言</title>
+    
+	<link rel="stylesheet" href="css/messageboard.css" media="screen" type="text/css" />
+
+</head>
+
+
+<body>
+	 
+	<!--左侧导航-可伸缩--> 	
+
+		<script>
+		function sider()
+		{
+			var a = document.getElementById('left1');
+
+			if (a.style['margin-left'] == '0px') {
+				a.style['margin-left'] = '-82px';
+			} else {
+				a.style['margin-left'] = '0px';
+			}
+
+		}
+		</script>
+
+		<div id="left1" onclick="sider();">
+			<a href='interesting.html'><span>爱生活</span></a>
+			<a href='photowall.html'><span>作品墙</span></a>
+			<a href='music.html'><span>酷音乐吧</span></a>
+			<a href='resume.html'><span>个人简历</span></a>		
+			<a href='messageboard.html'><span>联系我</span></a>
+			
+		</div>		
+		
+	<!--左侧导航 over-->  
+
+	<input class="button" name="Submit " type="submit" value="返回" onclick="javascript:history.back()" />
+	 
+	<form>
+		  
+		<input name="name" placeholder="请留下您的姓名......" class="name" required />
+		  
+		<input name="emailaddress" placeholder="请留下您的邮件地址......" class="email" type="email" required />
+    	
+		<textarea rows="4" cols="50" name="subject" placeholder="请留言......" class="message" required></textarea>
+    	
+		<input name="submit" class="btn" type="submit" value="发送" />
+  	
+	</form>
+
+</body>
+
+</html>

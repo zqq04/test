@@ -1,0 +1,184 @@
+
+* {
+margin:0;
+padding:0;
+}
+
+body {
+	background-image:url("image/back.jpg");
+	background:#2d3b36 url(../image/back.jpg)no-repeat center center fixed;
+	padding-top: 10px;
+}
+
+.container {
+	width:960px;
+	height:450px;
+	margin:30px auto;
+	position:relative;
+}
+
+.img {
+	/*宽度可以根据自己选择的照片内容而定*/
+	width:150px;
+}
+
+
+/*CSS3属性transform:旋转:rotate,缩放:scale,倾斜:skew */
+/*放大不旋转rotate（0deg）,放大五倍：scale（5） */
+.container img:hover {
+	box-shadow:15px 15px 20px rgba(50,50,50,0.4);
+	transform:rotate3d(1,1,1,0deg) scale(5);
+	-webkit-transform:rotate3d(1,1,1,0deg) scale(5);
+	-moz-transform:rotate3d(1,1,1,0deg) scale(5);
+	-ms-transform:rotate3d(1,1,1,0deg) scale(5);
+	/*本身图片的z-index是1，鼠标经过时候设置成2，那么这张图片就会"上来"*/
+	z-index:2;
+}
+
+.container img {
+	/*给照片加一个相框的效果*/
+	padding: 10px 10px 15px;
+	background-color: white;
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 3px rgba(50,50,50,0.4);
+	/*渐出动画效果*/
+	-moz-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+	-webkit-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+	z-index: 1;
+}
+
+.img1 {
+	left:400px;
+	top:0;
+	/*CSS3属性transform:旋转:rotate,缩放:scale,倾斜:skew */
+	transform:rotate(-5deg);
+	/*-webkit代表chrome、safari私有属性*/
+	-webkit-transform:rotate(-5deg);
+	/*-moz代表firefox浏览器私有属性*/
+	-moz-transform:rotate(-5deg);
+	/*-ms代表IE浏览器私有属性*/
+	-ms-transform:rotate(-5deg);
+}
+
+.img2 {
+	left:600px;
+	top:0;
+	/*旋转角度可以根据自己的审美观定夺*/
+	transform:rotate(-20deg);
+	-webkit-transform:rotate(-20deg);
+	-moz-transform:rotate(-20deg);
+	-ms-transform:rotate(-20deg);
+}
+
+.img3 {
+	bottom:0px;
+	 right:0;
+	transform:rotate(5deg);
+	-webkit-transform:rotate(5deg);
+	-moz-transform:rotate(5deg);
+	-ms-transform:rotate(5deg);
+}
+
+.img4 {
+	bottom:400px;
+	left:300px;
+	transform:rotate(-10deg);
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	animation-fill-ms-transform:rotate(-10deg);
+}
+
+.img5 {
+	bottom:0px;
+	top:0;
+	transform:rotate(-10deg);
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	-ms-transform:rotate(-10deg);
+}
+
+.img6 {
+	left:0px;
+	top:0;
+	transform:rotate(10deg);
+	-webkit-transform:rotate(10deg);
+	-moz-transform:rotate(10deg);
+	-ms-transform:rotate(10deg);
+}
+
+.img7 {
+	left:850px;
+	top:0;
+	transform:rotate(20deg);
+	-webkit-transform:rotate(20deg);
+	-moz-transform:rotate(20deg);
+	-ms-transform:rotate(20deg);
+}
+
+.img8 {
+	bottom:-20px;
+	top:650px;
+	transform:rotate(5deg);
+	-webkit-transform:rotate(5deg);
+	-moz-transform:rotate(5deg);
+	-ms-transform:rotate(5deg);
+}
+
+.img9 {
+	left:550px;
+	top:100px;
+	transform:rotate(15deg);
+	-webkit-transform:rotate(15deg);
+	-moz-transform:rotate(15deg);
+	-ms-transform:rotate(15deg);
+}
+
+.img10{
+	left:0px;
+	top:0px;
+	/*旋转角度可以根据自己的审美观定夺*/
+	transform:rotate(-20deg);
+	-webkit-transform:rotate(-20deg);
+	-moz-transform:rotate(-20deg);
+	-animation-fill-ms-transform:rotate(-20deg);
+}
+.button{
+	width: 100px;
+	height: 30px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #008B8B;
+	font-style:#fff; 
+} 
+	
+#left1 {
+		width: 100px;
+		overflow: hidden;
+		position: absolute;/*这里一定要设置*/
+		z-index: 500;
+		margin-top: 0;
+		margin-left: 0px;
+		-webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */
+		-moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/
+		-o-transition: .5s ease-in-out;
+		background-color: #E6E6FA;
+		top: 100px;
+		left: 0;
+		bottom: 100px; 
+		color: #fff;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+#left1 a{ 
+	padding: 1em;
+	display: block;
+	text-align: center;
+	transition: background .3s, box-shadow .3s;
+	text-decoration: none;
+	color: #000;
+}
+
+
